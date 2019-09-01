@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+#
+# Written by Chase Hill 2017
+#
+
 import matplotlib
 matplotlib.use("TkAgg")
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
