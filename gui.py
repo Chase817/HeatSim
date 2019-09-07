@@ -256,6 +256,8 @@ class gui(object):
 
     ###########################################################################
     def run(self):
+        from simulator import simulator
+
         simulation = simulator(self)
         simulation.compute(self)
         simulation.animate(self)

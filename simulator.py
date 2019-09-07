@@ -15,7 +15,7 @@ from tkinter import ttk
 
 from gui import gui
 
-class simulator(GUI):
+class simulator(gui):
     def __init__(self,gui):
         self.nt = int(gui.nt.get())    # Number of time steps (frames)
         self.Lx = float(gui.Lx.get())    # Plate length in x
