@@ -413,16 +413,14 @@ class HeatSim(GUI):
 # helping me to understand and utilize the method:
 # http://www.u.arizona.edu/~erdmann/mse350/_downloads/2D_heat_equation.pdf
 
-            for i in range(1,nx+1):
-                for j in range(1,ny+1):
-                    cur = self.T[i,j,t] # Current value of small region
-                    lNbr = self.T[i-1,j,t] # Left neighbor
-                    rNbr = self.T[i+1,j,t] # Right neighbor
-                    tNbr = self.T[i,j+1,t] # Top neighbor
-                    bNbr = self.T[i,j-1,t] # Bottom neighbor
-                    
-                    # Future value of small region
-                    self.T[i,j,t+1] = cur + a_dt_h2*(lNbr+rNbr+bNbr+tNbr-4*cur)
+            cur = self.T[:,:,t]             # Current value of grid
+            rollL = np.roll(cur,1,axis=1)   # Roll the grid left
+            rollR = np.roll(cur,-1,axis=1)  # Roll the grid right
+            rollU = np.roll(cur,1,axis=0)   # Roll the grid up
+            rollD = np.roll(cur,-1,axis=0)  # Roll the grid down
+
+            # Future grid values computed
+            self.T[:,:,t+1] = cur + a_dt_h2*(rollL+rollR+rollU+rollD-4*cur)
 
         data = self.T[1:nx+1,1:ny+1,:]
         
