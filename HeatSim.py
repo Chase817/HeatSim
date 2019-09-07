@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #
-# Written by Chase Hill 2017
+# Written by Chase Hill 2019
 #
 
 import matplotlib
@@ -251,7 +251,7 @@ class GUI(object):
                         +"maximum control without unnecessary pages and UI "  \
                         +"elements. In addition, countless hours went into "  \
                         +"rewriting code to keep the program as stable and "  \
-                        +"functional as possible.\n\nChase Hill - 2017"
+                        +"functional as possible.\n\nChase Hill - 2019"
         
         tk.Message(top, text=about_message, padx=10, pady=10).grid()
         
